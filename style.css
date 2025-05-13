@@ -6,6 +6,15 @@ body {
   color: #333;
 }
 
+.main-container{
+width:100%;
+
+.container{
+  width:80%;
+margin: auto;
+}
+}
+
 header {
   background-color: #3cb371;
   color: white;
