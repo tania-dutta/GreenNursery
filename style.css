@@ -1,0 +1,176 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #f0fff0, #fefcea);
+  color: #333;
+}
+
+header {
+  background-color: #3cb371;
+  color: white;
+  text-align: center;
+  padding: 1.5em 1em;
+  font-family: 'Pacifico', cursive;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 1em;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro-section {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.product-photo {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  margin: 1.5em auto;
+  display: block;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0.8em 1.2em;
+  background-color: #3cb371;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s;
+  font-family: 'Nunito', sans-serif;
+}
+
+.download-btn:hover {
+  background-color: #2e8b57;
+}
+
+.form-section {
+  max-width: 600px;
+  width: 100%;
+  margin: 2em auto;
+  padding: 2em;
+  background-color: #ffffffcc;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.form-section h2 {
+  color: #2e8b57;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 0.7em 0 0.3em;
+  font-weight: 600;
+  color: #2e8b57;
+}
+
+form input,
+form textarea {
+  padding: 0.8em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'Nunito', sans-serif;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #2e8b57;
+  outline: none;
+}
+
+.submit-btn {
+  margin-top: 1.5em;
+  background-color: #2e8b57;
+  color: white;
+  padding: 0.8em;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #256d45;
+}
+
+.quick-contact {
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.quick-contact h2 {
+  color: #2e8b57;
+  margin-bottom: 1em;
+}
+
+.action-btn {
+  display: inline-block;
+  margin: 0.5em;
+  background-color: #32cd32;
+  color: white;
+  padding: 0.8em 1.2em;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.action-btn:hover {
+  background-color: #289428;
+}
+
+.map-section {
+  max-width: 700px;
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.map-section h2 {
+  color: #2e8b57;
+  margin-bottom: 1em;
+}
+
+footer {
+  background-color: #3cb371;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
+}
