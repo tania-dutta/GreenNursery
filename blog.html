@@ -1,43 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blog - GreenLeaf</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <title>GreenLeaf Blog</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>GreenLeaf Blog</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="contact-me.html">Contact</a>
-      <a href="blog.html">Blog</a>
-    </nav>
-  </header>
+  <h1>GreenLeaf Blog</h1>
 
-  <main class="blog-container">
-    <aside>
-      <h3>Category</h3>
-      <ul>
-        <li><button class="filter-btn" data-category="All">All</button></li>
-        <li><button class="filter-btn" data-category="Tips">Tips</button></li>
-        <li><button class="filter-btn" data-category="Indoor">Indoor</button></li>
-        <li><button class="filter-btn" data-category="Outdoor">Outdoor</button></li>
-      </ul>
-    </aside>
+  <!-- Navigation Menu -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="contact-me.html">Contact</a>
+    <a href="blog.html">Blog</a>
+  </nav>
 
-    <section id="posts">
-      <!-- Posts will be loaded here -->
-    </section>
-  </main>
+  <h2>Filter Blog Posts</h2>
+  <button onclick="showPosts('all')">All</button>
+  <button onclick="showPosts('Tips')">Tips</button>
+  <button onclick="showPosts('Indoor')">Indoor</button>
+  <button onclick="showPosts('Outdoor')">Outdoor</button>
 
-  <footer>
-    <p>&copy; 2025 GreenLeaf. All rights reserved.</p>
-  </footer>
+  <!-- This area will show blog posts -->
+  <div id="post-area"></div>
 
-  <script src="script.js"></script>
+  <!-- Link JavaScript file -->
+  <script src="post.js"></script>
 </body>
 </html>
-blo
