@@ -231,5 +231,11 @@ footer {
 .see-more:hover {
   text-decoration: underline;
 }
+.required {
+  color: red;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
 
 
