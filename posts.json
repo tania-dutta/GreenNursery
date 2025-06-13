@@ -2,21 +2,21 @@
   {
     "title": "Watering Tips",
     "category": "Tips",
-    "image": "images/watering-tips.jpg",
+    "image": "watering-tips.jpg",
     "content": "Proper watering is key to healthy plants. Here's how to get it right for every type of plant in your garden or home.",
     "link": "#"
   },
   {
     "title": "Outdoor Garden",
     "category": "Outdoor",
-    "image": "images/outdoor-garden.jpg",
+    "image": "outdoor-garden.jpg",
     "content": "Designing your outdoor garden with the right plants and layout can bring life to your backyard. Get inspired here.",
     "link": "#"
   },
   {
     "title": "Indoor Plants",
     "category": "Indoor",
-    "image": "images/indoor-plants.jpg",
+    "image": "indoor-plants.jpg",
     "content": "Indoor plants bring nature inside and help improve air quality. These are the top picks to brighten up your room.",
     "link": "#"
   }
