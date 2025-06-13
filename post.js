@@ -1,20 +1,53 @@
-// List of blog posts
-var posts = [
-  { title: "Watering Tips", category: "Tips", image: "https://picsum.photos/200/120", text: "Keep your plants hydrated." },
-  { title: "Indoor Plants", category: "Indoor", image: "https://picsum.photos/200/121", text: "Best indoor plants to grow." },
-  { title: "Outdoor Garden", category: "Outdoor", image: "https://picsum.photos/200/122", text: "Decorate your garden easily." }
-];
+document.addEventListener("DOMContentLoaded", function () {
+  const posts = [
+    {
+      title: "Watering Tips",
+      category: "Tips",
+      description: "Learn how to water your plants properly and keep them healthy.",
+      image: "watering-tips.jpg",
+    },
+    {
+      title: "Indoor Plant Guide",
+      category: "Indoor",
+      description: "Discover the best indoor plants for your home.",
+      image: "indoor-plants.jpg",
+    },
+    {
+      title: "Outdoor Garden Ideas",
+      category: "Outdoor",
+      description: "Get inspired with creative outdoor gardening ideas.",
+      image: "outdoor-garden.jpg",
+    },
+  ];
 
-// This function shows blog posts on the screen
-function showPosts(type) {
-  var area = document.getElementById("post-area");
-  area.innerHTML = "";
+  const postArea = document.getElementById("post-area");
 
-  for (var i = 0; i < posts.length; i++) {
-    if (type === "all" || posts[i].category === type) {
-      area.innerHTML += "<div><img src='" + posts[i].image + "' style='width:200px'><h3>" + posts[i].title + "</h3><p>" + posts[i].text + "</p></div><hr>";
-    }
+  function displayPosts(category) {
+    postArea.innerHTML = ""; // Clear previous posts
+
+    const filteredPosts = category === "all"
+      ? posts
+      : posts.filter(post => post.category === category);
+
+    filteredPosts.forEach(post => {
+      const postDiv = document.createElement("div");
+      postDiv.classList.add("blog-post");
+
+      postDiv.innerHTML = `
+        <img src="${post.image}" alt="${post.title}" />
+        <div class="blog-content">
+          <h2>${post.title}</h2>
+          <p>${post.description}</p>
+        </div>
+      `;
+
+      postArea.appendChild(postDiv);
+    });
   }
-}
 
-showPosts("all"); // Show all posts when page loads
+  // Show all posts on page load
+  displayPosts("all");
+
+  // Expose function to buttons
+  window.showPosts = displayPosts;
+});
