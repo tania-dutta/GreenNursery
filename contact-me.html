@@ -37,6 +37,7 @@
         <textarea id="message" rows="4" placeholder="Your message" required></textarea>
 
         <button type="submit" class="submit-btn">Send</button>
+        <div id="warning"></div>
       </form>
     </section>
 
@@ -60,5 +61,32 @@
   </footer>
 </div>
   </div>
+  <script>
+function validateForm(event) {
+  event.preventDefault(); // Stops page from refreshing
+
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
+  var msg = document.getElementById("message").value;
+
+  var warning = document.getElementById("warning");
+  var text = "";
+
+  if (!name || !email || !phone || !msg) {
+    text = "Please fill all fields.";
+    warning.style.color = "red";
+  } else {
+    text = "Form submitted!";
+    warning.style.color = "green";
+  }
+
+  warning.innerText = text;
+}
+
+// Connect the function to the form submit button
+var form = document.querySelector("form");
+form.addEventListener("submit", validateForm);
+</script>
 </body>
 </html>
