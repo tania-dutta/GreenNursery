@@ -33,3 +33,6 @@ function showPosts(category) {
 
 // Run this when the page loads
 window.onload = loadPosts;
+window.onload = function () {
+  showPosts("all");
+};
