@@ -1,45 +1,43 @@
 const posts = [
   {
-    title: "How to Take Care of Indoor Plants",
-    image: "indoor-plants.jpg",
-    description: "Learn simple tricks to keep your indoor plants healthy and happy.",
-    category: "Indoor"
-  },
-  {
-    title: "Best Outdoor Plants for Your Garden",
-    image: "outdoor-garden.jpg",
-    description: "Check out our top outdoor plant picks that thrive in sunlight.",
-    category: "Outdoor"
-  },
-  {
-    title: "Watering Tips for Busy Plant Parents",
+    title: "Watering Tips",
+    category: "Tips",
     image: "watering-tips.jpg",
-    description: "Forgetful with watering? These tips will help you stay on track!",
-    category: "Tips"
+    content: "Proper watering is key to healthy plants. Here's how to get it right for every type of plant in your garden or home."
+  },
+  {
+    title: "Outdoor Garden",
+    category: "Outdoor",
+    image: "outdoor-garden.jpg",
+    content: "Designing your outdoor garden with the right plants and layout can bring life to your backyard. Get inspired here."
+  },
+  {
+    title: "Indoor Plants",
+    category: "Indoor",
+    image: "indoor-plants.jpg",
+    content: "Indoor plants bring nature inside and help improve air quality. These are the top picks to brighten up your room."
   }
 ];
 
 function showPosts(category) {
-  const container = document.getElementById("post-area");
-  container.innerHTML = "";
+  const postArea = document.getElementById("post-area");
+  postArea.innerHTML = "";
 
   const filtered = category === "all" ? posts : posts.filter(p => p.category === category);
 
   filtered.forEach(post => {
-    const postDiv = document.createElement("div");
-    postDiv.className = "blog-post";
-
-    postDiv.innerHTML = `
-      <h2>${post.title}</h2>
-      <img src="${post.image}" alt="${post.title}">
-      <p>${post.description}</p>
-      <a href="#" class="read-more">See More</a>
+    const blogHTML = `
+      <div class="blog-post">
+        <img src="${post.image}" alt="${post.title}">
+        <h3>${post.title}</h3>
+        <p>${post.content}</p>
+        <a href="#" class="read-more">See More</a>
+      </div>
     `;
 
-    container.appendChild(postDiv);
+    postArea.innerHTML += blogHTML;
   });
 }
 
-window.onload = () => {
-  showPosts("all");
-};
+// Show all posts on page load
+showPosts("all");
