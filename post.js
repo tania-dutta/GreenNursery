@@ -1,46 +1,51 @@
-const posts = [
-  {
-    title: "Watering Tips",
-    category: "Tips",
-    image: "images/watering-tips.jpg",
-    content: "Proper watering is key to healthy plants. Here's how to get it right for every type of plant in your garden or home.",
-    link: "#"
-  },
-  {
-    title: "Outdoor Garden",
-    category: "Outdoor",
-    image: "images/outdoor-garden.jpg",
-    content: "Designing your outdoor garden with the right plants and layout can bring life to your backyard. Get inspired here.",
-    link: "#"
-  },
-  {
-    title: "Indoor Plants",
-    category: "Indoor",
-    image: "images/indoor-plants.jpg",
-    content: "Indoor plants bring nature inside and help improve air quality. These are the top picks to brighten up your room.",
-    link: "#"
-  }
-];
-
-function showPosts(category) {
+document.addEventListener("DOMContentLoaded", () => {
   const postArea = document.getElementById("post-area");
-  postArea.innerHTML = "";
+  const buttons = document.querySelectorAll(".side-nav button");
 
-  const filtered = category === "all" ? posts : posts.filter(p => p.category === category);
-
-  filtered.forEach(post => {
-    const blogHTML = `
-      <div class="blog-post">
-        <img src="${post.image}" alt="${post.title}">
-        <h3>${post.title}</h3>
-        <p>${post.content}</p>
-        <a href="${post.link}" class="read-more">See More</a>
-      </div>
-    `;
-
-    postArea.innerHTML += blogHTML;
+  // Add click listeners to all category buttons (Requirement: addEventListener)
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const category = button.getAttribute("data-category");
+      showPosts(category);
+    });
   });
-}
 
-// Show all posts on page load
-window.onload = () => showPosts("all");
+  // Fetch posts and show based on category (includes fetch, try...catch, conditionals, filter)
+  async function showPosts(category) {
+    postArea.innerHTML = "";
+
+    try {
+      const response = await fetch("posts.json"); // Requirement: fetch
+      const posts = await response.json();
+
+      // Requirement: if/else + filter
+      const filtered =
+        category === "all"
+          ? posts
+          : posts.filter(post => post.category.toLowerCase() === category.toLowerCase()); // Requirement: filter
+
+      if (filtered.length === 0) {
+        postArea.innerHTML = `<p>No posts found for this category.</p>`; // Requirement: if
+      } else {
+        filtered.forEach(post => {
+          const blogHTML = `
+            <div class="blog-post">
+              <img src="${post.image}" alt="${post.title}">
+              <h3>${post.title}</h3>
+              <p>${post.content}</p>
+              <a href="${post.link}" class="read-more">See More</a>
+            </div>
+          `;
+          postArea.innerHTML += blogHTML;
+        });
+      }
+
+    } catch (error) {
+      console.error("Failed to fetch posts:", error); // Requirement: try...catch
+      postArea.innerHTML = `<p>Something went wrong while loading the posts.</p>`;
+    }
+  }
+
+  // Load all posts on initial page load
+  showPosts("all");
+});
