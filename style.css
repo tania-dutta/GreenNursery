@@ -189,4 +189,47 @@ footer {
   font-weight: bold;
   text-align: center;
 }
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+.blog-post img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-post-content {
+  padding: 15px;
+  font-size: 14px;
+}
+
+.blog-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.see-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #006600;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.see-more:hover {
+  text-decoration: underline;
+}
+
 
