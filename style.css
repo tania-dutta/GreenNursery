@@ -183,3 +183,10 @@ footer {
   padding: 1em;
   font-size: 0.9em;
 }
+#warning {
+  color: red;
+  margin-top: 1em;
+  font-weight: bold;
+  text-align: center;
+}
+
