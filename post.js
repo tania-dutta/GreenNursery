@@ -31,8 +31,5 @@ function showPosts(category) {
   });
 }
 
-// Run this when the page loads
+// ✅ Only one window.onload — do NOT overwrite it
 window.onload = loadPosts;
-window.onload = function () {
-  showPosts("all");
-};
